@@ -1,0 +1,267 @@
+/* =========================
+   GLOBAL WEBSITE
+========================= */
+
+.app {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        to bottom,
+        rgb(21, 4, 43) 0%,
+        rgb(10, 2, 22) 55%,
+        black 100%
+    );
+
+    color: white;
+}
+
+
+/* =========================
+   CURRENT PAGE
+========================= */
+
+.app-content {
+    position: relative;
+
+    z-index: 2;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   GLOBAL STARS
+========================= */
+
+.global-stars {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================
+   STAR LAYERS
+========================= */
+
+.global-stars .stars {
+    position: absolute;
+
+    inset: 0;
+}
+
+
+/* =========================
+   FIRST GROUP
+========================= */
+
+.global-stars .stars-1 {
+    background-image:
+        radial-gradient(2px 2px at 5% 12%, white, transparent),
+        radial-gradient(1px 1px at 12% 32%, white, transparent),
+        radial-gradient(2px 2px at 18% 8%, white, transparent),
+        radial-gradient(1px 1px at 23% 55%, white, transparent),
+        radial-gradient(2px 2px at 31% 22%, white, transparent),
+        radial-gradient(1px 1px at 38% 42%, white, transparent),
+        radial-gradient(2px 2px at 45% 10%, white, transparent),
+        radial-gradient(1px 1px at 52% 28%, white, transparent),
+        radial-gradient(2px 2px at 59% 15%, white, transparent),
+        radial-gradient(1px 1px at 66% 48%, white, transparent),
+        radial-gradient(2px 2px at 73% 20%, white, transparent),
+        radial-gradient(1px 1px at 81% 12%, white, transparent),
+        radial-gradient(2px 2px at 90% 30%, white, transparent),
+        radial-gradient(1px 1px at 96% 18%, white, transparent);
+
+    animation: globalTwinkle 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   SECOND GROUP
+========================= */
+
+.global-stars .stars-2 {
+    background-image:
+        radial-gradient(1px 1px at 8% 72%, white, transparent),
+        radial-gradient(2px 2px at 16% 88%, white, transparent),
+        radial-gradient(1px 1px at 27% 75%, white, transparent),
+        radial-gradient(2px 2px at 34% 62%, white, transparent),
+        radial-gradient(1px 1px at 43% 85%, white, transparent),
+        radial-gradient(2px 2px at 51% 68%, white, transparent),
+        radial-gradient(1px 1px at 58% 92%, white, transparent),
+        radial-gradient(2px 2px at 67% 76%, white, transparent),
+        radial-gradient(1px 1px at 75% 62%, white, transparent),
+        radial-gradient(2px 2px at 84% 82%, white, transparent),
+        radial-gradient(1px 1px at 93% 70%, white, transparent);
+
+    animation: globalTwinkle 4s ease-in-out infinite 1s;
+}
+
+
+/* =========================
+   THIRD GROUP
+========================= */
+
+.global-stars .stars-3 {
+    background-image:
+        radial-gradient(1px 1px at 3% 45%, white, transparent),
+        radial-gradient(2px 2px at 14% 18%, white, transparent),
+        radial-gradient(1px 1px at 29% 35%, white, transparent),
+        radial-gradient(2px 2px at 41% 52%, white, transparent),
+        radial-gradient(1px 1px at 48% 38%, white, transparent),
+        radial-gradient(2px 2px at 57% 55%, white, transparent),
+        radial-gradient(1px 1px at 64% 32%, white, transparent),
+        radial-gradient(2px 2px at 71% 44%, white, transparent),
+        radial-gradient(1px 1px at 79% 28%, white, transparent),
+        radial-gradient(2px 2px at 88% 50%, white, transparent),
+        radial-gradient(1px 1px at 98% 42%, white, transparent);
+
+    animation: globalTwinkle 5s ease-in-out infinite 2s;
+}
+
+
+/* =========================
+   FOURTH GROUP
+========================= */
+
+.global-stars .stars-4 {
+    background-image:
+        radial-gradient(1px 1px at 7% 25%, white, transparent),
+        radial-gradient(1px 1px at 19% 48%, white, transparent),
+        radial-gradient(1px 1px at 26% 12%, white, transparent),
+        radial-gradient(1px 1px at 36% 72%, white, transparent),
+        radial-gradient(1px 1px at 47% 25%, white, transparent),
+        radial-gradient(1px 1px at 54% 82%, white, transparent),
+        radial-gradient(1px 1px at 63% 12%, white, transparent),
+        radial-gradient(1px 1px at 69% 65%, white, transparent),
+        radial-gradient(1px 1px at 78% 90%, white, transparent),
+        radial-gradient(1px 1px at 87% 15%, white, transparent),
+        radial-gradient(1px 1px at 95% 58%, white, transparent);
+
+    animation: globalTwinkle 6s ease-in-out infinite 3s;
+}
+
+
+/* =========================
+   TWINKLING
+========================= */
+
+@keyframes globalTwinkle {
+
+    0% {
+        opacity: 0.35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.35;
+    }
+}
+
+
+/* =========================
+   SHOOTING STAR
+========================= */
+
+.global-stars .shooting-star {
+    position: absolute;
+
+    top: 15%;
+    left: 80%;
+
+    width: 4px;
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px white,
+        0 0 12px white,
+        0 0 20px white;
+
+    opacity: 0;
+
+    animation: globalShootingStar 6s linear infinite;
+}
+
+
+/* =========================
+   SHOOTING STAR TRAIL
+========================= */
+
+.global-stars .shooting-star::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    right: 2px;
+
+    width: 100px;
+    height: 2px;
+
+    background: linear-gradient(
+        to left,
+        transparent,
+        white
+    );
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================
+   SHOOTING STAR ANIMATION
+========================= */
+
+@keyframes globalShootingStar {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 0)
+            rotate(-35deg);
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+
+        transform:
+            translate(-400px, 300px)
+            rotate(-35deg);
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-400px, 300px)
+            rotate(-35deg);
+    }
+}

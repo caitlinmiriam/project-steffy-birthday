@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Finger+Paint&display=swap');
+
+/* =========================
+   MAIN PAGE
+   ========================= */
+
+.memories-page {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 30px 25px;
+}
+
+/* =========================
+   TITLE
+   ========================= */
+
+.memories-title {
+    margin: 0;
+    text-align: center;
+    font-family: "Finger Paint", cursive;
+    font-size: 48px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   INTRO
+   ========================= */
+
+.memories-intro {
+    width: min(700px, 90%);
+    box-sizing: border-box;
+    margin: auto 0;
+    padding: 45px 50px;
+    background: white;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+.memories-intro p {
+    margin: 0;
+    color: #030303;
+    font-family: "Cantarell", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================
+   START BUTTON
+   ========================= */
+
+.memories-start-button {
+    margin-top: 32px;
+    padding: 13px 34px;
+    border: none;
+    border-radius: 30px;
+    background: #102a56;
+    color: white;
+    font-family: "Cantarell", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.memories-start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px rgba(16, 42, 86, 0.3);
+}
+
+.memories-start-button:active {
+    transform: translateY(0);
+}
+
+/* =========================
+   MEMORY CARDS
+   ========================= */
+
+.memories-cards {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 130px);
+    margin-top: 20px;
+}
+
+.memory-card-wrapper {
+    position: absolute;
+    width: 250px;
+    height: 100px;
+    perspective: 1000px;
+    transition:
+        left 0.7s ease,
+        right 0.7s ease,
+        top 0.7s ease,
+        transform 0.7s ease,
+        width 0.7s ease,
+        height 0.7s ease;
+}
+
+.memory-card {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.memory-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+.memory-card-front,
+.memory-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* =========================
+   FRONT
+   ========================= */
+
+.memory-card-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f3eb;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.memory-heart {
+    color: #d71920;
+    font-size: 32px;
+}
+
+/* =========================
+   BACK
+   ========================= */
+
+.memory-card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    background: #f7f3eb;
+    color: #102a56;
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.memory-card-back p {
+    margin: 0;
+    font-family: "Cantarell", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+/* =========================
+   HEART BUTTON
+   ========================= */
+
+.memory-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-shrink: 0;
+}
+
+.memory-like-button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 2px solid #d71920;
+    border-radius: 50%;
+    background: transparent;
+    color: #d71920;
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.memory-like-button:hover {
+    transform: scale(1.1);
+}
+
+.memory-like-button.liked {
+    background: #d71920;
+    color: white;
+}
+
+/* =========================
+   CARD POSITIONS
+   ========================= */
+
+.memory-position-1 {
+    left: 8%;
+    top: 3%;
+}
+
+.memory-position-2 {
+    left: 8%;
+    top: 23%;
+}
+
+.memory-position-3 {
+    left: 8%;
+    top: 43%;
+}
+
+.memory-position-4 {
+    left: 8%;
+    top: 63%;
+}
+
+.memory-position-5 {
+    left: 8%;
+    top: 83%;
+}
+
+.memory-position-6 {
+    right: 8%;
+    top: 3%;
+}
+
+.memory-position-7 {
+    right: 8%;
+    top: 23%;
+}
+
+.memory-position-8 {
+    right: 8%;
+    top: 43%;
+}
+
+.memory-position-9 {
+    right: 8%;
+    top: 63%;
+}
+
+.memory-position-10 {
+    right: 8%;
+    top: 83%;
+}
+
+/* =========================
+   ACTIVE CARD
+   ========================= */
+
+.memory-card-wrapper.memory-active {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 390px;
+    height: auto;
+    min-height: 0;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.memory-card-wrapper.memory-active .memory-card {
+    height: auto;
+}
+
+.memory-card-wrapper.memory-active .memory-card-inner {
+    height: auto;
+    min-height: 0;
+    transform: rotateY(180deg);
+}
+
+.memory-card-wrapper.memory-active .memory-card-front,
+.memory-card-wrapper.memory-active .memory-card-back {
+    position: relative;
+    inset: auto;
+}
+
+.memory-card-wrapper.memory-active .memory-card-front {
+    display: none;
+}
+
+.memory-card-wrapper.memory-active .memory-card-back {
+    height: auto;
+    min-height: 0;
+    padding: 24px;
+}
+
+/* =========================
+   VISITED CARDS
+   ========================= */
+
+.memory-card-wrapper.memory-visited .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-wrapper.memory-visited .memory-card-back {
+    padding: 12px;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.memory-card-wrapper.memory-visited .memory-card-back p {
+    margin: 0;
+    width: 100%;
+    max-height: 76px;
+    overflow: hidden;
+    text-align: left;
+}
+
+/* =========================
+   ACTIVE OVERRIDES VISITED
+   ========================= */
+
+.memory-card-wrapper.memory-active .memory-card-inner {
+    transform: rotateY(180deg);
+}
+
+.memory-card-wrapper.memory-active .memory-card-back {
+    padding: 24px;
+}
+
+.memory-card-wrapper.memory-active .memory-card-back p {
+    max-height: none;
+    overflow: visible;
+}
+
+/* =========================
+   DONE BUTTON
+   ========================= */
+
+.memories-done-button {
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    padding: 13px 35px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #102a56;
+    font-family: "Cantarell", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.memories-done-button:hover {
+    transform: translateX(-50%) translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .memories-page {
+        padding: 60px 20px 20px;
+    }
+
+    .memories-title {
+        font-size: 34px;
+    }
+
+    .memories-intro {
+        width: 95%;
+        margin: auto 0;
+        padding: 30px 25px;
+    }
+
+    .memories-intro p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .memories-cards {
+        height: calc(100vh - 100px);
+    }
+
+    .memory-card-wrapper {
+        width: 170px;
+        height: 75px;
+    }
+
+    .memory-position-1,
+    .memory-position-2,
+    .memory-position-3,
+    .memory-position-4,
+    .memory-position-5 {
+        left: 4%;
+    }
+
+    .memory-position-6,
+    .memory-position-7,
+    .memory-position-8,
+    .memory-position-9,
+    .memory-position-10 {
+        right: 4%;
+    }
+
+    .memory-position-1,
+    .memory-position-6 {
+        top: 3%;
+    }
+
+    .memory-position-2,
+    .memory-position-7 {
+        top: 23%;
+    }
+
+    .memory-position-3,
+    .memory-position-8 {
+        top: 43%;
+    }
+
+    .memory-position-4,
+    .memory-position-9 {
+        top: 63%;
+    }
+
+    .memory-position-5,
+    .memory-position-10 {
+        top: 83%;
+    }
+
+    .memory-card-wrapper.memory-active {
+        width: 84%;
+        max-width: 340px;
+        height: auto;
+    }
+
+    .memory-card-wrapper.memory-active .memory-card-back {
+        padding: 20px;
+    }
+
+    .memory-card-back p {
+        font-size: 14px;
+    }
+
+    .memory-card-wrapper.memory-visited .memory-card-back {
+        padding: 10px;
+    }
+
+    .memory-card-wrapper.memory-visited .memory-card-back p {
+        max-height: 55px;
+    }
+
+    .memory-card-wrapper.memory-active .memory-card-back p {
+        max-height: none;
+        overflow: visible;
+    }
+}

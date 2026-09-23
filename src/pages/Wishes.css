@@ -1,0 +1,872 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Fuzzy+Bubbles:wght@400;700&display=swap');
+
+
+/* =========================
+   WISHES PAGE
+========================= */
+
+.wishes-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+
+/* =========================
+   CLOSED ENVELOPE
+========================= */
+
+.wishes-envelope-container {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    animation: wishesEnvelopeAppear 1.2s ease forwards;
+
+    top: -250px;
+}
+
+
+
+/* =========================
+   ENVELOPE IMAGE
+========================= */
+
+.wishes-envelope-image {
+    display: block;
+
+    width: 1000px;
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =========================
+   OPEN ME TEXT
+========================= */
+
+/* OPEN ME TEXT */
+.wishes-open-text {
+    margin-top: -220px;
+
+    font-family: "Fuzzy Bubbles", cursive;
+    font-size: 20px;
+    animation: wishesTextPulse 1.5s infinite;
+}
+
+
+/* =========================
+   ENVELOPE SHAKE
+========================= */
+
+.wishes-envelope-shake {
+    animation: wishesEnvelopeShake 0.7s ease;
+}
+
+@keyframes wishesEnvelopeShake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-7deg);
+    }
+
+    30% {
+        transform: rotate(7deg);
+    }
+
+    45% {
+        transform: rotate(-6deg);
+    }
+
+    60% {
+        transform: rotate(6deg);
+    }
+
+    75% {
+        transform: rotate(-4deg);
+    }
+
+    90% {
+        transform: rotate(4deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* =========================
+   LETTER SCENE
+========================= */
+
+.wishes-opened-scene {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   LETTER + BUTTON WRAPPER
+========================= */
+
+.wishes-letter-wrapper {
+    position: relative;
+
+    z-index: 60;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(520px, 82%);
+}
+
+
+/* =========================
+   SOFT WHITE POOF
+========================= */
+
+.wishes-white-poof {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 50;
+
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.45) 30%,
+        rgba(255, 255, 255, 0.15) 60%,
+        rgba(255, 255, 255, 0) 100%
+    );
+
+    opacity: 0;
+
+    animation: wishesSoftPoof 0.45s ease-out forwards;
+}
+
+@keyframes wishesSoftPoof {
+    0% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 0.8;
+    }
+
+    65% {
+        opacity: 0.45;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CONFETTI CONTAINER
+========================= */
+
+.wishes-confetti {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 40;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CONFETTI PIECES
+========================= */
+
+.wishes-confetti span {
+    position: absolute;
+
+    bottom: -20px;
+
+    width: 8px;
+    height: 15px;
+
+    border-radius: 2px;
+
+    opacity: 0;
+
+    animation-name: wishesConfettiPop;
+    animation-duration: 2.4s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+/* =========================
+   CONFETTI COLORS
+========================= */
+
+.wishes-confetti span:nth-child(4n + 1) {
+    background: #ff6b9d;
+}
+
+.wishes-confetti span:nth-child(4n + 2) {
+    background: #ffd166;
+}
+
+.wishes-confetti span:nth-child(4n + 3) {
+    background: #6dd5ed;
+}
+
+.wishes-confetti span:nth-child(4n + 4) {
+    background: #b88cff;
+}
+
+
+/* ==================================================
+   LEFT CORNER CONFETTI
+================================================== */
+
+.wishes-confetti span:nth-child(1) {
+    left: 2%;
+    --move-x: 190px;
+    --move-y: -520px;
+    --rotate: 520deg;
+}
+
+.wishes-confetti span:nth-child(2) {
+    left: 4%;
+    --move-x: 280px;
+    --move-y: -680px;
+    --rotate: -560deg;
+}
+
+.wishes-confetti span:nth-child(3) {
+    left: 6%;
+    --move-x: 120px;
+    --move-y: -600px;
+    --rotate: 420deg;
+}
+
+.wishes-confetti span:nth-child(4) {
+    left: 8%;
+    --move-x: 340px;
+    --move-y: -470px;
+    --rotate: -620deg;
+}
+
+.wishes-confetti span:nth-child(5) {
+    left: 10%;
+    --move-x: 220px;
+    --move-y: -760px;
+    --rotate: 580deg;
+}
+
+.wishes-confetti span:nth-child(6) {
+    left: 12%;
+    --move-x: 390px;
+    --move-y: -560px;
+    --rotate: -500deg;
+}
+
+.wishes-confetti span:nth-child(7) {
+    left: 5%;
+    --move-x: 260px;
+    --move-y: -390px;
+    --rotate: 640deg;
+}
+
+.wishes-confetti span:nth-child(8) {
+    left: 15%;
+    --move-x: 310px;
+    --move-y: -700px;
+    --rotate: -540deg;
+}
+
+.wishes-confetti span:nth-child(9) {
+    left: 3%;
+    --move-x: 170px;
+    --move-y: -650px;
+    --rotate: 470deg;
+}
+
+.wishes-confetti span:nth-child(10) {
+    left: 9%;
+    --move-x: 360px;
+    --move-y: -580px;
+    --rotate: -680deg;
+}
+
+.wishes-confetti span:nth-child(11) {
+    left: 7%;
+    --move-x: 240px;
+    --move-y: -800px;
+    --rotate: 600deg;
+}
+
+.wishes-confetti span:nth-child(12) {
+    left: 13%;
+    --move-x: 410px;
+    --move-y: -520px;
+    --rotate: -460deg;
+}
+
+.wishes-confetti span:nth-child(13) {
+    left: 1%;
+    --move-x: 300px;
+    --move-y: -430px;
+    --rotate: 550deg;
+}
+
+.wishes-confetti span:nth-child(14) {
+    left: 11%;
+    --move-x: 200px;
+    --move-y: -720px;
+    --rotate: -580deg;
+}
+
+.wishes-confetti span:nth-child(15) {
+    left: 16%;
+    --move-x: 350px;
+    --move-y: -630px;
+    --rotate: 490deg;
+}
+
+.wishes-confetti span:nth-child(16) {
+    left: 4%;
+    --move-x: 430px;
+    --move-y: -740px;
+    --rotate: -620deg;
+}
+
+.wishes-confetti span:nth-child(17) {
+    left: 8%;
+    --move-x: 180px;
+    --move-y: -540px;
+    --rotate: 520deg;
+}
+
+.wishes-confetti span:nth-child(18) {
+    left: 14%;
+    --move-x: 320px;
+    --move-y: -460px;
+    --rotate: -500deg;
+}
+
+.wishes-confetti span:nth-child(19) {
+    left: 2%;
+    --move-x: 270px;
+    --move-y: -690px;
+    --rotate: 650deg;
+}
+
+.wishes-confetti span:nth-child(20) {
+    left: 10%;
+    --move-x: 390px;
+    --move-y: -600px;
+    --rotate: -570deg;
+}
+
+
+/* ==================================================
+   RIGHT CORNER CONFETTI
+================================================== */
+
+.wishes-confetti span:nth-child(21) {
+    right: 2%;
+    left: auto;
+    --move-x: -190px;
+    --move-y: -520px;
+    --rotate: -520deg;
+}
+
+.wishes-confetti span:nth-child(22) {
+    right: 4%;
+    left: auto;
+    --move-x: -280px;
+    --move-y: -680px;
+    --rotate: 560deg;
+}
+
+.wishes-confetti span:nth-child(23) {
+    right: 6%;
+    left: auto;
+    --move-x: -120px;
+    --move-y: -600px;
+    --rotate: -420deg;
+}
+
+.wishes-confetti span:nth-child(24) {
+    right: 8%;
+    left: auto;
+    --move-x: -340px;
+    --move-y: -470px;
+    --rotate: 620deg;
+}
+
+.wishes-confetti span:nth-child(25) {
+    right: 10%;
+    left: auto;
+    --move-x: -220px;
+    --move-y: -760px;
+    --rotate: -580deg;
+}
+
+.wishes-confetti span:nth-child(26) {
+    right: 12%;
+    left: auto;
+    --move-x: -390px;
+    --move-y: -560px;
+    --rotate: 500deg;
+}
+
+.wishes-confetti span:nth-child(27) {
+    right: 5%;
+    left: auto;
+    --move-x: -260px;
+    --move-y: -390px;
+    --rotate: -640deg;
+}
+
+.wishes-confetti span:nth-child(28) {
+    right: 15%;
+    left: auto;
+    --move-x: -310px;
+    --move-y: -700px;
+    --rotate: 540deg;
+}
+
+.wishes-confetti span:nth-child(29) {
+    right: 3%;
+    left: auto;
+    --move-x: -170px;
+    --move-y: -650px;
+    --rotate: -470deg;
+}
+
+.wishes-confetti span:nth-child(30) {
+    right: 9%;
+    left: auto;
+    --move-x: -360px;
+    --move-y: -580px;
+    --rotate: 680deg;
+}
+
+.wishes-confetti span:nth-child(31) {
+    right: 7%;
+    left: auto;
+    --move-x: -240px;
+    --move-y: -800px;
+    --rotate: -600deg;
+}
+
+.wishes-confetti span:nth-child(32) {
+    right: 13%;
+    left: auto;
+    --move-x: -410px;
+    --move-y: -520px;
+    --rotate: 460deg;
+}
+
+.wishes-confetti span:nth-child(33) {
+    right: 1%;
+    left: auto;
+    --move-x: -300px;
+    --move-y: -430px;
+    --rotate: -550deg;
+}
+
+.wishes-confetti span:nth-child(34) {
+    right: 11%;
+    left: auto;
+    --move-x: -200px;
+    --move-y: -720px;
+    --rotate: 580deg;
+}
+
+.wishes-confetti span:nth-child(35) {
+    right: 16%;
+    left: auto;
+    --move-x: -350px;
+    --move-y: -630px;
+    --rotate: -490deg;
+}
+
+.wishes-confetti span:nth-child(36) {
+    right: 4%;
+    left: auto;
+    --move-x: -430px;
+    --move-y: -740px;
+    --rotate: 620deg;
+}
+
+.wishes-confetti span:nth-child(37) {
+    right: 8%;
+    left: auto;
+    --move-x: -180px;
+    --move-y: -540px;
+    --rotate: -520deg;
+}
+
+.wishes-confetti span:nth-child(38) {
+    right: 14%;
+    left: auto;
+    --move-x: -320px;
+    --move-y: -460px;
+    --rotate: 500deg;
+}
+
+.wishes-confetti span:nth-child(39) {
+    right: 2%;
+    left: auto;
+    --move-x: -270px;
+    --move-y: -690px;
+    --rotate: -650deg;
+}
+
+.wishes-confetti span:nth-child(40) {
+    right: 10%;
+    left: auto;
+    --move-x: -390px;
+    --move-y: -600px;
+    --rotate: 570deg;
+}
+
+
+/* =========================
+   CONFETTI POP ANIMATION
+========================= */
+
+@keyframes wishesConfettiPop {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(0, 20px)
+            rotate(0deg)
+            scale(0.5);
+    }
+
+    8% {
+        opacity: 1;
+
+        transform:
+            translate(
+                calc(var(--move-x) * 0.08),
+                calc(var(--move-y) * 0.08)
+            )
+            rotate(calc(var(--rotate) * 0.1))
+            scale(1.2);
+    }
+
+    25% {
+        opacity: 1;
+
+        transform:
+            translate(
+                calc(var(--move-x) * 0.3),
+                calc(var(--move-y) * 0.3)
+            )
+            rotate(calc(var(--rotate) * 0.3))
+            scale(1);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            translate(
+                calc(var(--move-x) * 0.6),
+                calc(var(--move-y) * 0.6)
+            )
+            rotate(calc(var(--rotate) * 0.55))
+            scale(0.95);
+    }
+
+    72% {
+        opacity: 0.7;
+
+        transform:
+            translate(
+                calc(var(--move-x) * 0.85),
+                calc(var(--move-y) * 0.85)
+            )
+            rotate(calc(var(--rotate) * 0.8))
+            scale(0.85);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(var(--move-x), var(--move-y))
+            rotate(var(--rotate))
+            scale(0.65);
+    }
+}
+
+
+/* =========================
+   GREETING CARD
+========================= */
+
+.wishes-greeting-card {
+    position: relative;
+
+    width: 100%;
+
+    padding: 25px 35px 20px;
+
+    box-sizing: border-box;
+
+    background: #fff8f0;
+
+    border-radius: 28px;
+
+    border: 2px solid rgba(255, 255, 255, 0.7);
+
+    text-align: left;
+
+    color: #222;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.22);
+
+    overflow: hidden;
+
+    animation: wishesLetterAppear 1s ease forwards;
+}
+
+
+/* =========================
+   LETTER TITLE
+========================= */
+
+.wishes-greeting-card h1 {
+    margin: 0 0 16px;
+
+    text-align: center;
+
+    font-family: "Agbalumo", cursive;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 1.25;
+}
+
+
+/* =========================
+   LETTER TEXT
+========================= */
+
+.wishes-greeting-card p {
+    margin: 0 0 9px;
+
+    padding-bottom: 5px;
+
+    font-family: "Fuzzy Bubbles", cursive;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    text-align: left;
+}
+
+.wishes-greeting-card p:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CARD DECORATION
+========================= */
+
+.wishes-card-decoration {
+    margin: 3px 0 10px;
+
+    text-align: center;
+
+    font-size: 21px;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+========================= */
+
+.wishes-continue-button {
+    display: block;
+
+    margin: 16px auto 0;
+
+    padding: 9px 23px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family: "Cantarell", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    background: white;
+
+    color: #222;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.wishes-continue-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   GENERAL ANIMATIONS
+========================= */
+
+@keyframes wishesEnvelopeAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes wishesLetterAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.75)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+@keyframes wishesTextPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .wishes-envelope-image {
+        width: 240px;
+    }
+
+    .wishes-letter-wrapper {
+        width: 92%;
+    }
+
+    .wishes-greeting-card {
+        padding: 22px 22px 18px;
+
+        border-radius: 24px;
+    }
+
+    .wishes-greeting-card h1 {
+        font-size: 23px;
+
+        margin-bottom: 14px;
+    }
+
+    .wishes-greeting-card p {
+        font-size: 14px;
+
+        line-height: 1.35;
+
+        margin-bottom: 8px;
+
+        padding-bottom: 4px;
+    }
+
+    .wishes-continue-button {
+        margin-top: 12px;
+
+        padding: 8px 20px;
+    }
+}
+

@@ -1,0 +1,94 @@
+.navigation-bar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    z-index: 1000;
+
+    animation: navigationAppear 0.8s ease;
+}
+
+
+/* =========================
+   NAVIGATION BUTTONS
+   ========================= */
+
+.navigation-bar button {
+    border: none;
+
+    background: transparent;
+
+    padding: 12px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================
+   MATERIAL SYMBOLS
+   ========================= */
+
+.navigation-bar button .material-symbols-outlined {
+    font-size: 26px;
+
+    font-weight: 400;
+}
+
+
+/* =========================
+   HOVER
+   ========================= */
+
+.navigation-bar button:hover {
+    color: white;
+
+    transform:
+        translateX(4px)
+        scale(1.1);
+
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================
+   NAVIGATION APPEAR
+   ========================= */
+
+@keyframes navigationAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(-80px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}

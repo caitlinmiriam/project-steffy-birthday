@@ -1,0 +1,768 @@
+/* =========================
+   GAME PAGE
+========================= */
+
+.game-page {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    color: white;
+
+    font-family: "Cantarell", sans-serif;
+}
+
+
+/* =========================
+   GAME INTRO
+========================= */
+
+.game-intro {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* =========================
+   INTRO CONTENT
+========================= */
+
+.game-intro-content {
+    width: min(700px, 90%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.game-intro-content h1 {
+    margin: 0 0 15px;
+
+    font-family: "Silkscreen", sans-serif;
+
+    font-size: 52px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.game-subtitle {
+    margin: 0;
+
+    font-size: 22px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.game-instruction {
+    margin: 10px 0 25px;
+
+    max-width: 500px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    opacity: 0.9;
+}
+
+
+/* =========================
+   CAKE PREVIEW
+========================= */
+
+.cake-preview {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 5px 0 25px;
+}
+
+.cake-preview span {
+    font-size: 45px;
+
+    animation: cakeFloat 2s ease-in-out infinite;
+}
+
+.cake-preview span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.cake-preview span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes cakeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =========================
+   VIDEO DEMO
+========================= */
+
+.game-demo {
+    width: min(520px, 90%);
+
+    aspect-ratio: 16 / 9;
+
+    margin-bottom: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* =========================
+   DEMO VIDEO
+========================= */
+
+.demo-video {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    background: black;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   INTRO BUTTONS
+========================= */
+
+.game-intro-buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* =========================
+   COMMON BUTTON
+========================= */
+
+.game-intro-buttons button,
+.game-over-buttons button {
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-family: "Cantarell", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================
+   LET'S GO / TRY AGAIN
+========================= */
+
+.game-start-button {
+    border: 1px solid white;
+
+    background: white;
+
+    color: rgb(21, 4, 43);
+}
+
+.game-start-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 5px 18px rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================
+   LATER / CONTINUE
+========================= */
+
+.game-later-button {
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: transparent;
+
+    color: white;
+}
+
+.game-later-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================
+   ACTIVE GAME
+========================= */
+
+.active-game {
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+.game-score {
+    position: fixed;
+
+    top: 20px;
+    left: 30px;
+
+    z-index: 20;
+
+    margin: 0;
+
+    font-family: "Cantarell", sans-serif;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   VERTICAL TIMER
+========================= */
+
+.game-timer {
+    position: fixed;
+
+    top: 20px;
+    right: 30px;
+
+    width: 6px;
+    height: calc(100vh - 40px);
+
+    z-index: 20;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   TIMER PROGRESS
+========================= */
+
+.timer-ring {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: var(--timer-progress);
+
+    background: white;
+
+    border-radius: 10px;
+
+    transition: height 1s linear;
+}
+
+
+/* =========================
+   TIMER NUMBER
+========================= */
+
+.timer-inner {
+    display: none;
+}
+
+
+/* =========================
+   GAME ARENA
+========================= */
+
+.game-arena {
+    position: relative;
+
+    width: calc(100vw - 300px);
+    height: calc(100vh - 40px);
+
+    margin: 20px auto;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: rgba(0, 0, 0, 0.005);
+
+    backdrop-filter: blur(2px);
+
+    -webkit-backdrop-filter: blur(2px);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        inset 55px 0 75px -55px
+            rgba(0, 0, 0, 0.60),
+
+        inset -55px 0 75px -55px
+            rgba(0, 0, 0, 0.60),
+
+        inset 0 -30px 45px -30px
+            rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================
+   TOP GLASS GRADIENT
+========================= */
+
+.game-arena::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 120px;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    background: linear-gradient(
+        to bottom,
+
+        rgba(0, 0, 0, 0.72) 0%,
+
+        rgba(0, 0, 0, 0.60) 18%,
+
+        rgba(0, 0, 0, 0.42) 38%,
+
+        rgba(0, 0, 0, 0.24) 58%,
+
+        rgba(0, 0, 0, 0.10) 76%,
+
+        rgba(0, 0, 0, 0.025) 90%,
+
+        rgba(0, 0, 0, 0) 100%
+    );
+
+    border-radius: 30px 30px 0 0;
+
+    box-shadow:
+        inset 0 12px 22px rgba(0, 0, 0, 0.65),
+
+        inset 0 30px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+/* =========================
+   FALLING CAKES
+========================= */
+
+.falling-cake {
+    position: absolute;
+
+    z-index: 5;
+
+    padding: 0;
+
+    border: none;
+
+    background: none;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    transform: translateX(-50%);
+
+    will-change: top, transform;
+
+    transition: transform 0.1s ease;
+}
+
+.falling-cake:hover {
+    transform:
+        translateX(-50%)
+        scale(1.15);
+}
+
+
+/* =========================
+   +1 TWINKLE EFFECT
+========================= */
+
+.point-effect {
+    position: absolute;
+
+    z-index: 20;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    pointer-events: none;
+
+    transform: translateX(-50%);
+
+    animation: pointFloat 0.8s ease-out forwards;
+}
+
+
+/* =========================
+   TWINKLING STAR
+========================= */
+
+.twinkle-star {
+    font-size: 15px;
+
+    font-weight: 400;
+
+    color: #ffd700;
+
+    animation: starTwinkle 0.8s ease-out forwards;
+}
+
+
+/* =========================
+   +1 TEXT
+========================= */
+
+.point-text {
+    font-family: "Cantarell", sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    color: white;
+
+    text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================
+   FLOAT UP
+========================= */
+
+@keyframes pointFloat {
+
+    0% {
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(-45px);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   STAR TWINKLE
+========================= */
+
+@keyframes starTwinkle {
+
+    0% {
+        transform:
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    25% {
+        transform:
+            scale(1.15)
+            rotate(20deg);
+
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            scale(0.8)
+            rotate(40deg);
+
+        opacity: 0.75;
+    }
+
+    75% {
+        transform:
+            scale(1.05)
+            rotate(60deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            scale(0.4)
+            rotate(90deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   GAME OVER
+========================= */
+
+.game-over {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* =========================
+   GAME OVER CONTENT
+========================= */
+
+.game-over-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* =========================
+   GAME OVER TITLE
+========================= */
+
+.game-over-content h1 {
+    margin: 0 0 10px;
+
+    font-family: "Silkscreen", sans-serif;
+
+    font-size: 50px;
+
+    font-weight: 400;
+}
+
+.game-over-content h2 {
+    margin: 5px 0;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   FINAL SCORE
+========================= */
+
+.final-score {
+    margin: 10px 0;
+
+    font-size: 45px;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   SCORE MESSAGE
+========================= */
+
+.score-message {
+    margin: 5px 0 25px;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   GAME OVER BUTTONS
+========================= */
+
+.game-over-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .game-intro-content h1 {
+        font-size: 40px;
+    }
+
+    .game-subtitle {
+        font-size: 19px;
+    }
+
+    .game-instruction {
+        font-size: 15px;
+    }
+
+    .game-demo {
+        width: 95%;
+    }
+
+    .game-intro-buttons,
+    .game-over-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .game-intro-buttons button,
+    .game-over-buttons button {
+        width: 150px;
+    }
+
+    .game-arena {
+        width: calc(100vw - 40px);
+
+        height: calc(100vh - 30px);
+
+        margin: 15px auto;
+
+        border-radius: 24px;
+
+        background: rgba(0, 0, 0, 0.005);
+    }
+
+    .game-score {
+        top: 20px;
+
+        left: 20px;
+
+        font-size: 20px;
+    }
+
+
+    /* =========================
+       MOBILE VERTICAL TIMER
+    ========================= */
+
+    .game-timer {
+        top: 15px;
+
+        right: 15px;
+
+        width: 5px;
+
+        height: calc(100vh - 30px);
+    }
+
+    .timer-ring {
+        width: 100%;
+    }
+
+    .timer-inner {
+        display: none;
+    }
+}

@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+
+
+/* =========================
+   BIRTHDAY PAGE
+========================= */
+
+.birthday-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   BIRTHDAY TITLE
+========================= */
+
+.birthday-title {
+    position: absolute;
+
+    top: 80px;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Agbalumo", cursive;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    z-index: 2;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    animation: writeTitle 3s steps(30, end) forwards;
+}
+
+
+/* =========================
+   PANDA IMAGE
+========================= */
+
+.panda-image {
+    position: absolute;
+
+    width: 800px;
+    height: auto;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: block;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+    animation: pandaPulse 4s ease-in-out infinite;
+}
+
+
+/* =========================
+   BIRTHDAY CONTINUE BUTTON
+========================= */
+
+.birthday-continue-button {
+    position: absolute;
+
+    left: 50%;
+    bottom: 60px;
+
+    transform: translateX(-50%);
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 25px;
+
+    font-family: "Cantarell", sans-serif;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================
+   BIRTHDAY CONTINUE BUTTON HOVER
+========================= */
+
+.birthday-continue-button:hover {
+    transform: translateX(-50%) translateY(-4px) scale(1.05);
+
+    box-shadow:
+        0 6px 18px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   BIRTHDAY CONTINUE BUTTON CLICK
+========================= */
+
+.birthday-continue-button:active {
+    transform: translateX(-50%) translateY(-1px) scale(0.98);
+}
+
+
+/* =========================
+   CLICK INSTRUCTION
+========================= */
+
+.click-text {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 25px;
+
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Cantarell", sans-serif;
+    font-size: 18px;
+
+    z-index: 20;
+
+    animation: clickFade 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    top: -15px;
+
+    width: 8px;
+    height: 14px;
+
+    pointer-events: none;
+
+    z-index: 30;
+
+    animation-name: confettiFall;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+
+/* =========================
+   TITLE WRITING ANIMATION
+========================= */
+
+@keyframes writeTitle {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* =========================
+   PANDA PULSE
+========================= */
+
+@keyframes pandaPulse {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.015);
+    }
+}
+
+
+/* =========================
+   CLICK TEXT FADE
+========================= */
+
+@keyframes clickFade {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   CONFETTI FALL
+========================= */
+
+@keyframes confettiFall {
+    0% {
+        top: -20px;
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0deg);
+    }
+
+    100% {
+        top: 110vh;
+
+        opacity: 0;
+
+        transform:
+            translateX(80px)
+            rotate(720deg);
+    }
+}
+
+
+/* =========================
+   FLOATING SURPRISES
+========================= */
+
+.surprise {
+    position: fixed;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 35px;
+
+    font-family: "Cantarell", sans-serif;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    animation: floatUp 6s ease-out forwards;
+}
+
+
+/* =========================
+   SURPRISE FLOATING ANIMATION
+========================= */
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, 0)
+            scale(0.5);
+    }
+
+    15% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -20px)
+            scale(1);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -500px)
+            scale(1.05);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -750px)
+            scale(1.1);
+    }
+}
+
