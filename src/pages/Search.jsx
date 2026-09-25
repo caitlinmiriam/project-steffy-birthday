@@ -15,7 +15,7 @@ const WORDS = [
     "VIJAY",
     "ENZO",
     "LEVIATHAN",
-    "STOVE",
+    "MUSHROOM",
 ];
 
 const DISPLAY_WORDS = {
