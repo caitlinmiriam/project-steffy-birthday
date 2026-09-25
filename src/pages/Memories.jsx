@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Memories.css";
 
-const introMessage = `I was about to do AI-generated images. But you know data centres use a lot of water. So I scrapped that plan (the panda with the cake - I drew it myself). Instead here are some memories of us that I adore and relive whenever I think about you. Give them a like if you feel the same way too.`;
+const introMessage = `I was about to do AI-generated images. But you know data centres use a lot of water. So I scrapped that plan (the panda with the cake - I drew it myself). Instead here are some memories of us that makes me smile whenever I think about you. Give them a like if you feel the same way too.`;
 
 const memories = [
     `Our first conversation when you said, "It's 'STEPHY'. Not 'STEFFY'". But in the end I loved Steffyyy more.`,
