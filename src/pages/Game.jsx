@@ -173,11 +173,11 @@ function Game({ onNext }) {
 
     const getMessage = () => {
         if (score >= 40) {
-            return "WOW! That's my gamer friend 🎮";
+            return "WOW! That's a gamer right there 🎮";
         }
 
         if (score >= 25) {
-            return "Of course! You are the number 1!";
+            return "Congrats! You've reached the top!";
         }
 
         if (score >= 15) {
@@ -185,7 +185,7 @@ function Game({ onNext }) {
         }
 
         if (score >= 5) {
-            return "I expected much better from you Steffy 👀";
+            return "I expected better 👀";
         }
 
         return "WHAT!!!! 😳";
